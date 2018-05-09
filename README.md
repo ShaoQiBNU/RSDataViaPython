@@ -11,28 +11,28 @@ from threading import Timer  <br>
 import pandas as pd  <br>
 import numpy as np <br>
 
-2.爬虫函数def delayrun():
+2.爬虫函数
 ---------
-                死循环，为了长时间爬取
+	死循环，为了长时间爬取
 while True:  <br>
 
-                获取当前时间
+	获取当前时间
 file_time=time.strftime('%Y-%m-%d-%H',time.localtime(time.time())) <br>
 
-                以当前时间命名文件
+	以当前时间命名文件
 file_name='C:/Users/SQ/Desktop/'+file_time+'-PM.csv' <br>
 
-                爬取网址上的table
+	爬取网址上的table
 data=pd.read_html('http://www.86pm25.com/city/beijing.html')[0] <br>
 
-                得到需要的数据
+	得到需要的数据
 data=data.ix[:,[0,1,2,3,4]].copy() <br>
 
-                数据字符串做调整
+	数据字符串做调整
 data.ix[:,3]=data.ix[:,3].str.replace('μg/m³','') <br>
 data.ix[:,4]=data.ix[:,4].str.replace('μg/m³','') <br>
 
-                保存输出
+	保存输出
 data.to_csv(file_name) <br>
 
 3.时间控件
