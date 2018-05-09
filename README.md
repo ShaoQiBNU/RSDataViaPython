@@ -33,7 +33,7 @@ data.ix[:,2]=data.ix[:,2].str.replace('μg/m³','') <br>
 data.ix[:,3]=data.ix[:,3].str.replace('μg/m³','') <br>
 
 	保存输出
-data.to_csv(file_name) <br>
+data.to_csv(file_name,index=False) <br>
 
 3.时间控件
 ---------
