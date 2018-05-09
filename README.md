@@ -26,11 +26,11 @@ file_name='C:/Users/SQ/Desktop/'+file_time+'-PM.csv' <br>
 data=pd.read_html('http://www.86pm25.com/city/beijing.html')[0] <br>
 
 	得到需要的数据
-data=data.ix[:,[0,1,2,3,4]].copy() <br>
+data=data.ix[:,[0,1,3,4]].copy() <br>
 
 	数据字符串做调整
+data.ix[:,2]=data.ix[:,2].str.replace('μg/m³','') <br>
 data.ix[:,3]=data.ix[:,3].str.replace('μg/m³','') <br>
-data.ix[:,4]=data.ix[:,4].str.replace('μg/m³','') <br>
 
 	保存输出
 data.to_csv(file_name) <br>
