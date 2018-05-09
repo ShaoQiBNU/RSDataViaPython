@@ -35,7 +35,6 @@ data.ix[:,4]=data.ix[:,4].str.replace('μg/m³','') <br>
                 保存输出
 data.to_csv(file_name) <br>
 
-
 3.时间控件
 ---------
 
